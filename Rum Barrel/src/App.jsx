@@ -1,12 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import BrewList from './components/BrewList'
+import AboutPage from './components/AboutPage'
+import SearchPage from './components/SearchPage'
 
 function App() {
-  const [count, setCount] = useState(0);
   const [city, setCity] = useState('');
+  const [display, setDisplay] = useState(false);
+  const [home, setHome] = useState(true);
+  const [search, setSearch] = useState(false);
+  const [query, setQuery] = useState('');
+  const [about, setAbout] = useState(false);
   const [breweries, setBreweries] = useState([]);
 
   const openingPage = document.getElementById('openingPage');
@@ -15,7 +19,6 @@ function App() {
     try{
       const response = await fetch(query);
     const json = await response.json();
-    console.log(json);
     setBreweries(json);
     } catch (error) {
       console.error('Error fetching breweries', error);
@@ -23,40 +26,63 @@ function App() {
   };
 
   const startSearch = (e) => {
-    e.preventDefault()
-    openingPage.classList.add('hide');
-    landingPage.classList.remove('hide');
-    callAPI(`https://api.openbrewerydb.org/v1/breweries?by_city=${city}&per_page=10`);
+    if (city === '') {
+      alert('Please enter a city');
+      return;
+    };
+
+    e.preventDefault();
+    callAPI(`https://api.openbrewerydb.org/v1/breweries?by_city=${city}&per_page=20`);
+    setDisplay(true);
     console.log(breweries);
   };
 
+  const handleAbout = () => {
+    setAbout(true);
+    setHome(false);
+    setSearch(false);
+
+  }
+
+  const handleSearch = () => {
+    setSearch(true);
+    setAbout(false);
+    setHome(false);
+  }
+
+  const handleHome = () => {
+    setHome(true);
+    setAbout(false);
+    setSearch(false);
+  }
+
   return (
     <>
-      <div id='openingPage'>
+      {!display && <div id='openingPage'>
         <h1>Welcome to Rum Barrel</h1>
         <h3>Your #1 Brewery Map</h3>
 
         <form action="">
           <label htmlFor="userInput">Please enter your current city to Kick things off</label>
           <br/>
-          <input type="text" name="userInput" id="userInput" onChange={(e) => {setCity(e.target.value)}}/>
+          <input type="text" name="userInput" id="userInput" required onChange={(e) => {setCity(e.target.value)}}/>
           <br/>
           <button onClick={startSearch}>Find Near {city}</button>
         </form>
-      </div>
+      </div>}
 
-
-      <div className='hide' id='landingPage'>
+      {display && 
+      <div id='landingPage'>
         <div className='sideMenu'>
           <h1>Rum Barrel</h1>
           <ul>
-            <li><button className='navButton'>Home🏡</button></li>
-            <li><button className='navButton'>Search 🔍</button></li>
-            <li><button className='navButton'>About ℹ️</button></li>
+            <li className='navBlist'><button className='navButton'onClick={handleHome}>Home🏡</button></li>
+            <li className='navBlist'><button className='navButton'onClick={handleSearch}>Search 🔍</button></li>
+            <li className='navBlist'><button className='navButton'onClick={handleAbout}>About ℹ️</button></li>
           </ul>
         </div>
-        
-        <div className='centerPiece'>
+
+        {home && <div className='centerPiece'>
           <div className='info'>
             <div>Your City is: <br/> {city}</div>
             <div>There are <span>{breweries.length}</span> in {city.toUpperCase()}</div>
@@ -65,8 +91,14 @@ function App() {
           <div className='brewList'>
             <BrewList breweries={breweries}/>
           </div>
-        </div>
+        </div>}
+
+        {search && <SearchPage startSearch={callAPI}/>}
+
+        {about && <AboutPage/>}
       </div>
+
+      }
        
       
       

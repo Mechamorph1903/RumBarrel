@@ -42,6 +42,10 @@
 
 #openingPage{
   background-color: burlywood;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .hide {
@@ -53,6 +57,7 @@
   display: flex;
   width: 100vw;
   position: relative;
+  height: 100vh;
   
 }
 
@@ -87,3 +92,18 @@
   width: 100px;
   height: 100px;
 }
+
+.navBlist{
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.navButton{
+  background-color: none;
+  cursor: pointer;
+}
+
+ul{
+  padding: 0;
+}
+

@@ -59,7 +59,7 @@ function App() {
   return (
     <>
       {!display && <div id='openingPage'>
-        <h1>Welcome to Rum Barrel🍺</h1>
+        <h1>Welcome to Rum Barrel🍻</h1>
         <h3>Your #1 Brewery Map</h3>
 
         <form action="">

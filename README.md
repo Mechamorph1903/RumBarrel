@@ -12,15 +12,15 @@ The following **required** functionality is completed:
 
 - [x] **The list displays a list of data fetched using an API call**
 - [x] **Data uses the useEffect React hook and async/await syntax**
-- [ ] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *insert details*
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+  - [x] *number of breweries, city chosen and most common typemof brewery*
 - [x] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types such as a text input, a selection, or a slider
 - [ ] The user can enter specific bounds for filter values
 
 The following **additional** features are implemented:
@@ -43,10 +43,11 @@ GIF created with LiceCap
 ## Notes
 
 Describe any challenges encountered while building the app.
+Couldn't implement the specific bounds stretch feature
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2024] [name of copyright owner]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

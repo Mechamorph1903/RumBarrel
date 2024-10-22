@@ -43,7 +43,7 @@ GIF created with LiceCap
 ## Notes
 
 Describe any challenges encountered while building the app.
-Couldn't implement the specific bounds stretch feature
+- Couldn't implement the specific bounds stretch feature
 
 ## License
 

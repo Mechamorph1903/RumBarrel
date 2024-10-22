@@ -32,7 +32,7 @@ function App() {
     };
 
     e.preventDefault();
-    callAPI(`https://api.openbrewerydb.org/v1/breweries?by_city=${city}&per_page=20`);
+    callAPI(`https://api.openbrewerydb.org/v1/breweries?by_city=${city}`);
     setDisplay(true);
     console.log(breweries);
   };
@@ -59,7 +59,7 @@ function App() {
   return (
     <>
       {!display && <div id='openingPage'>
-        <h1>Welcome to Rum Barrel</h1>
+        <h1>Welcome to Rum Barrel🍺</h1>
         <h3>Your #1 Brewery Map</h3>
 
         <form action="">
@@ -74,7 +74,7 @@ function App() {
       {display && 
       <div id='landingPage'>
         <div className='sideMenu'>
-          <h1>Rum Barrel</h1>
+          <h1>Rum Barrel🍻</h1>
           <ul>
             <li className='navBlist'><button className='navButton'onClick={handleHome}>Home🏡</button></li>
             <li className='navBlist'><button className='navButton'onClick={handleSearch}>Search 🔍</button></li>
@@ -83,13 +83,8 @@ function App() {
         </div>
 
         {home && <div className='centerPiece'>
-          <div className='info'>
-            <div>Your City is: <br/> {city}</div>
-            <div>There are <span>{breweries.length}</span> in {city.toUpperCase()}</div>
-            <div></div>
-          </div>
           <div className='brewList'>
-            <BrewList breweries={breweries}/>
+            <BrewList breweries={breweries} city={city}/>
           </div>
         </div>}
 

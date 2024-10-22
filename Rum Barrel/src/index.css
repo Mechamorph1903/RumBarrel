@@ -69,34 +69,57 @@ button:focus-visible {
 }
 
 .brewery{
-  background-color: #213547;
+  background-color: #9e7628;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  overflow-y: auto;
   max-height: 500px;
   display: block;
 }
 
+table thead {
+  background-color: rgba(122, 44, 26, 0.684);
+  color: #ffffff;
+}
+table th, table td {
+  padding: 10px;  /* Add padding to cells for better readability */
+  text-align: left;
+}
+
+table tbody {
+  display: block; /* Allows for scrolling */
+  max-height: 500px; /* You can adjust the height */
+  overflow-y: auto;
+  width: 100%;
+}
+
+table thead, table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Fixes column width issue */
+}
 .searchBar > form {
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1em 0;
 }
 
-.searchBar{
+.searchBar{ 
   position: relative;
   height: 20%;
+  background-color: rgba(222, 184, 135, 0.733);
+  margin-bottom: 10px;
 }
 
 .searchTable{
   position: relative;
   height: 80%;
+
 }
 
 .searchContainer{
@@ -105,4 +128,38 @@ table {
   flex-direction: column;
   justify-content: center;  
   align-items: center;
+  padding: auto;
+  margin-left: 10px;
+  position: relative;
+  width: 80%; 
+}
+
+span{
+  font-size: larger;
+  font-weight: 800;
+}
+
+
+.filterSection {
+  margin-top: 20px;
+  display: flex;
+}
+
+.filterSection label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"], select {
+  margin-left: 10px;
+}
+
+.searchSection{
+  display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.about{
+  background-color: #9e6128ad;
 }

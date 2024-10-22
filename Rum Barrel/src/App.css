@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
   text-align: center;
 }
 
@@ -39,4 +38,52 @@
 
 .read-the-docs {
   color: #888;
+}
+
+#openingPage{
+  background-color: burlywood;
+}
+
+.hide {
+  display: none;
+}
+
+#landingPage {
+  background-color: burlywood;
+  display: flex;
+  width: 100vw;
+  position: relative;
+  
+}
+
+.sideMenu{
+  position: relative;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.366);
+  margin: 0%;
+  width: 20%;
+}
+
+.centerPiece{
+  padding: auto;
+  margin-left: 10px;
+  position: relative;
+  width: 80%;
+}
+
+.info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 1em;
+  box-shadow: 0 0 1em #00000033;
+}
+
+.info > div{
+  background-color: red;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
 }

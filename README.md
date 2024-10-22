@@ -2,9 +2,9 @@
 
 Submitted by: **Daniel ANorue**
 
-This web app: **insert description**
+This web app: **Retrieves a list of breweries based on User Input and displays a table from the data retrieved**
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
